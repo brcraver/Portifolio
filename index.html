@@ -7,9 +7,64 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="JavaScript/MenuDinamico.js"></script>
 	
+		<script>
+			function btConcordar(){
+				$(".aberturaPagina").css({"visibility" : "hidden"});
+				$(".popUpInicialAberturaPagina").css({"visibility" : "hidden"});
+				$(".textoPopUpInicialPTBR").css({"visibility" : "hidden"});
+				$(".textoPopUpInicialENG").css({"visibility" : "hidden"});
+				$(".textoPTBRBtPopUpInicialConcordar").css({"visibility" : "hidden"});
+				$(".textoENGBtPopUpInicialConcordar").css({"visibility" : "hidden"});
+			}
 
+			function btLinguagemENG(){ 
+				$(".textoPopUpInicialPTBR").css({"visibility" : "hidden"});
+				$(".textoPopUpInicialENG").css({"visibility" : "visible"});
+				document.getElementById("textoBtPtBR").innerHTML = '<b>I Agree</b>';
+			}
+
+			function btLinguagemPTBR(){
+				$(".textoPopUpInicialPTBR").css({"visibility" : "visible"});
+				$(".textoPopUpInicialENG").css({"visibility" : "hidden"});
+				document.getElementById("textoBtPtBR").innerHTML = '<b>Concordo</b>';
+
+			}
+
+		</script>
 	</head>
 	<body>
+
+		<div class="aberturaPagina"></div>
+		<div class="popUpInicialAberturaPagina">
+			<div class="divBtsPopUpInicialLinguagens">
+				<div class="btPopUpInicialENG">
+					<div class="textoBtPopUpInicialENG" onClick="btLinguagemENG()"><b>ENG</b></div>
+				</div>
+				<div class="divSeparacaoLinguagens"></div>
+				<div class="btPopUpInicialPTBR">
+					<div class="textoBtPopUpInicialPTBR" onClick="btLinguagemPTBR()"><b>PT-BR</b></div>
+				</div>
+			</div>
+			<div class="divTextoPopUpInicial">
+				<div class="textoPopUpInicialPTBR">	Este site encontra-se em desenvolvimento, portanto, tudo<br>
+													que visualizar nele não estará pronto.<br>
+													<br>Agradeço a compreensão.<br>
+													<br>
+													<br><b>Desenvolvido por: Lucas Novais dos Santos</b><br>
+				</div>
+				<div class="textoPopUpInicialENG">	This site is under development, so everything
+													that viewing it will not be in the final stage.<br>
+													<br>Thanks for the comprehension.<br>
+													<br>
+													<br><b>Developed by: Lucas Novais dos Santos</b><br>
+				</div>
+			</div>
+			<div class="btPopUpInicialConcordar">
+				<div class="textoPTBRBtPopUpInicialConcordar" id="textoBtPtBR" onclick="btConcordar()"><b>Concordo</b></div>
+				<div class="textoENGBtPopUpInicialConcordar"id="textoBtEng" onclick="btConcordar()"><b>I agree</b></div>
+			</div>
+		</div>
+
 		<div class="container" ></div>
 			<div class="bubbles" ></div>
 		</div>
